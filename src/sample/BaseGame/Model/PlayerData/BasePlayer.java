@@ -46,7 +46,7 @@ public class BasePlayer implements I_GameObject {
         pos.translate(this.position.getX(), this.position.getY());
 //        System.out.println(position);
         Shape player = pos.createTransformedShape(af.createTransformedShape(new Ellipse2D.Double(0, 0, this.diameter, this.diameter)));
-        Shape gun = pos.createTransformedShape(af.createTransformedShape(new Rectangle2D.Double(this.diameter/3, this.diameter/2, this.diameter/3, this.diameter)));
+//        Shape gun = pos.createTransformedShape(af.createTransformedShape(new Rectangle2D.Double(this.diameter/3, this.diameter/2, this.diameter/3, this.diameter)));
         shapes.add(player);
         return shapes;
     }
@@ -75,13 +75,13 @@ public class BasePlayer implements I_GameObject {
 
 
     private void moveInDirection(KeyCode direction, double deltatime) {
-        if (direction == KeyCode.D && this.position.getX() < Config.screenSize.getX()-50) {
+        if (direction == KeyCode.D && this.position.getX() < Config.screenSize.getX()-55) {
             setPosition((int) this.position.getX() + (int) (this.speed* (deltatime * Config.UNIVERSAL_SPEED_MODIFIER)), (int) this.position.getY());
-        } else if (direction == KeyCode.A && this.position.getX() > 100) {
+        } else if (direction == KeyCode.A && this.position.getX() > 65) {
             setPosition((int) this.position.getX() - (int) (this.speed * (deltatime * Config.UNIVERSAL_SPEED_MODIFIER)), (int) this.position.getY());
-        } else  if (direction == KeyCode.W && this.position.getY() > 100){
+        } else  if (direction == KeyCode.W && this.position.getY() > 75){
             setPosition((int) this.position.getX(), (int) this.position.getY() - (int)(this.speed*(deltatime * Config.UNIVERSAL_SPEED_MODIFIER)));
-        } else  if (direction == KeyCode.S && this.position.getY() < Config.screenSize.getY()-50) {
+        } else  if (direction == KeyCode.S && this.position.getY() < Config.screenSize.getY()-65) {
             setPosition((int) this.position.getX(), (int) this.position.getY() + (int) (this.speed * (deltatime * Config.UNIVERSAL_SPEED_MODIFIER)));
         } else if(direction == KeyCode.SPACE ){
             this.shoot();
