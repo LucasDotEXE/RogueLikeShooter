@@ -1,4 +1,4 @@
-package sample.BaseGame.Model.MapData;
+package sample.BaseGame.Model.MapData.RoomData;
 
 import sample.BaseGame.Model.I_GameObject;
 
