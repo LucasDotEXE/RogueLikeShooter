@@ -10,7 +10,7 @@ public class BaseMap implements I_UpdateAble {
 
     private Image floor;
 
-    ArrayList<BaseRoom> rooms
+    ArrayList<BaseRoom> rooms;
 
     public BaseMap() {
         this.floor = new Image("empty_room.png");
