@@ -1,15 +1,13 @@
 package sample.BaseGame.Vieuw;
 
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import org.jfree.fx.FXGraphics2D;
 import org.jfree.fx.ResizableCanvas;
-import sample.BaseGame.BaseGameWrapper;
-import sample.BaseGame.Model.BaseGameModel;
 import sample.BaseGame.Model.Config;
 import sample.BaseGame.Model.I_DrawAble;
-import sample.BaseGame.Model.I_GameObject;
 import sample.BaseGame.Model.MapData.BaseMap;
 
 import java.awt.*;
@@ -54,7 +52,13 @@ public class BaseGameView implements I_GameRenderer {
     }
 
     private void drawGameMap(BaseMap map) {
-        this.canvas.getGraphicsContext2D().drawImage(map.getFloor(), 5, 5, Config.screenSize.getX(), Config.screenSize.getY());
+        this.graphics2D.setColor(new Color(97, 62, 49));
+        this.graphics2D.fill(new Rectangle(0,0, 2000, 2000));
+        this.graphics2D.drawImage(map.getBufferedImage(), 0, 0, null);
+//        this.canvas.;
+
+//        this.canvas.getGraphicsContext2D().drawImage(map.getFloor(), 5, 5, Config.screenSize.getX(), Config.screenSize.getY());
+//        this.canvas.getGraphicsContext2D().drawImage(new Image("simple_door.png"), Config.screenSize.getX()/2 - 54, -30, 104,104);
     }
 
     private void clearScreen() {

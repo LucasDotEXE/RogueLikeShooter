@@ -12,7 +12,7 @@ public class BaseGameModel {
 
 
     public BaseGameModel() {
-        this.player = new BasePlayer(25, 1.5);
+        this.player = new BasePlayer(50, 1.5);
         this.map = new BaseMap();
     }
 
